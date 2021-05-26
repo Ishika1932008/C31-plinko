@@ -9,7 +9,7 @@ var plinkos=[];
 var rows=[];
 var ground;
 var rows;
-
+var score=0;
 
 var rowsHeight = 150;
 
@@ -53,9 +53,12 @@ function setup() {
 
 function draw() {
   background(0);
+  text("score:"+score,30,30)
+ 
   if(frameCount % 30 === 0){
-    particle = new Particle(random(130, 400), 0, 7, random(0, 360));
+    particle = new Particle(random(width/2-30, width/2+30), 0, 7, random(0, 360));
     particles.push(particle);
+  score++
   }
 
   
@@ -78,5 +81,5 @@ function draw() {
 
  ground.display();
 
-  drawSprites();
+
 }
